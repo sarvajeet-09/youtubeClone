@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css"
+        integrity="sha512-UuQ/zJlbMVAw/UU8vVBhnI4op+/tFOpQZVT+FormmIEhRSCnJWyHiBbEVgM4Uztsht41f3FzVWgLuwzUqOObKw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/regular.min.css"
+        integrity="sha512-KYEnM30Gjf5tMbgsrQJsR0FSpufP9S4EiAYi168MvTjK6E83x3r6PTvLPlXYX350/doBXmTFUEnJr/nCsDovuw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Option 1: Include in HTML -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="assets/style/index.css">
+</head>
+
+<body onload="initializeSearch()">
+    <!-- <iframe width="853" height="480" src="https://www.youtube.com/embed/kyjg5kX4pT0" title="Same Time Same Jagah (Chaar Din) ● Sandeep Brar ● Kulwinder Billa ● New Punjabi Songs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+    
+    <div on class="nav container-fluid sticky-top bg-light">
+        <div class="toggle-btn" id="toggle-btn">
+            <span id="cross1"></span>
+            <span id="cross2"></span>
+            <span id="cross3"></span>
+        </div>
+        <div class="logo ms-2">
+            <img src="assets/images/youtubelogo.png" class="img-fluid w-75" alt="youtubelogo">
+
+        </div>
+        <div class="search d-flex">
+            <input type="text" class="inputsearch form-control" placeholder="search" id="inputsearch">
+            <div class="icon">
+                <a href="#" id="searchbtn"><i class="bi bi-search"></i></a>
+            </div>
+        </div>
+        <div class="voice">
+            <a href="#"> <i class="bi bi-mic-fill"></i></a>
+        </div>
+
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="leftsidebar">
+                    <div class="sidebar">
+                        <a href="#" class="d-flex"><svg xmlns="http://www.w3.org/2000/svg"
+                                enable-background="new 0 0 24 24" viewBox="0 0 24 24" focusable="false"
+                                style="pointer-events: none; display: inherit;">
+                                <g>
+                                    <path d="M4 21V10.08l8-6.96 8 6.96V21h-6v-6h-4v6H4z"></path>
+                                </g>
+                            </svg><span class="ps-2 pt-1">Home</span> </a>
+                        <br>
+                        <a href="#" class="d-flex"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                focusable="false" style="pointer-events: none; display: inherit;">
+                                <path
+                                    d="M10 14.65v-5.3L15 12l-5 2.65zm7.77-4.33-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.24-2.53-5.07-1.56L6 6.94c-1.29.68-2.07 2.04-2 3.49.07 1.42.93 2.67 2.22 3.25.03.01 1.2.5 1.2.5L6 14.93c-1.83.97-2.53 3.24-1.56 5.07.97 1.83 3.24 2.53 5.07 1.56l8.5-4.5c1.29-.68 2.06-2.04 1.99-3.49-.07-1.42-.94-2.68-2.23-3.25zm-.23 5.86-8.5 4.5c-1.34.71-3.01.2-3.72-1.14-.71-1.34-.2-3.01 1.14-3.72l2.04-1.08v-1.21l-.69-.28-1.11-.46c-.99-.41-1.65-1.35-1.7-2.41-.05-1.06.52-2.06 1.46-2.56l8.5-4.5c1.34-.71 3.01-.2 3.72 1.14.71 1.34.2 3.01-1.14 3.72L15.5 9.26v1.21l1.8.74c.99.41 1.65 1.35 1.7 2.41.05 1.06-.52 2.06-1.46 2.56z">
+                                </path>
+                            </svg><span class="ps-2 pt-1">shorts</span> </a>
+                        <br>
+                        <a href="#" class="d-flex"><svg xmlns="http://www.w3.org/2000/svg"
+                                enable-background="new 0 0 24 24" viewBox="0 0 24 24" focusable="false"
+                                style="pointer-events: none; display: inherit;">
+                                <path
+                                    d="M10 18v-6l5 3-5 3zm7-15H7v1h10V3zm3 3H4v1h16V6zm2 3H2v12h20V9zM3 10h18v10H3V10z">
+                                </path>
+                            </svg>
+                            <sapn class="pt-1 ps-2">Subscription</sapn>
+                        </a>
+                        <br>
+                        <hr class="separator">
+                        <a href="#" class="d-flex"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                focusable="false" style="pointer-events: none; display: inherit;">
+                                <path d="M22 7H2v1h20V7zm-9 5H2v-1h11v1zm0 4H2v-1h11v1zm2 3v-8l7 4-7 4z"></path>
+                            </svg><span class="pt-1 ps-2">playlist</span></a>
+                        <br>
+                        <a href="#" class="d-flex"><svg xmlns="http://www.w3.org/2000/svg" height="24"
+                                style="pointer-events: none; display: inherit;" viewBox="0 0 24 24" focusable="false">
+                                <g>
+                                    <path
+                                        d="M14.97 16.95 10 13.87V7h2v5.76l4.03 2.49-1.06 1.7zM22 12c0 5.51-4.49 10-10 10S2 17.51 2 12h1c0 4.96 4.04 9 9 9s9-4.04 9-9-4.04-9-9-9C8.81 3 5.92 4.64 4.28 7.38c-.11.18-.22.37-.31.56L3.94 8H8v1H1.96V3h1v4.74c.04-.09.07-.17.11-.25.11-.22.23-.42.35-.63C5.22 3.86 8.51 2 12 2c5.51 0 10 4.49 10 10z">
+                                    </path>
+                                </g>
+                            </svg><span class="pt-1 ps-2">History</span></a>
+                        <br>
+                        <a href="#" class="d-flex"><svg xmlns="http://www.w3.org/2000/svg"
+                                enable-background="new 0 0 24 24" viewBox="0 0 24 24" focusable="false"
+                                style="pointer-events: none; display: inherit;">
+                                <path d="m10 8 6 4-6 4V8zm11-5v18H3V3h18zm-1 1H4v16h16V4z"></path>
+                            </svg><span class="pt-1 ps-2">your video </span></a>
+                        <br>
+                        <a href="#" class="d-flex"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                focusable="false" style="pointer-events: none; display: inherit;">
+                                <path
+                                    d="M14.97 16.95 10 13.87V7h2v5.76l4.03 2.49-1.06 1.7zM12 3c-4.96 0-9 4.04-9 9s4.04 9 9 9 9-4.04 9-9-4.04-9-9-9m0-1c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2z">
+                                </path>
+                            </svg><span class="pt-1 ps-2">watch later</span> </a>
+                        <br>
+                        <hr class="separator">
+                        <a href="#" class="d-flex"><svg xmlns="http://www.w3.org/2000/svg"
+                                enable-background="new 0 0 24 24" viewBox="0 0 24 24" focusable="false"
+                                style="pointer-events: none; display: inherit;">
+                                <path
+                                    d="M18.77,11h-4.23l1.52-4.94C16.38,5.03,15.54,4,14.38,4c-0.58,0-1.14,0.24-1.52,0.65L7,11H3v10h4h1h9.43 c1.06,0,1.98-0.67,2.19-1.61l1.34-6C21.23,12.15,20.18,11,18.77,11z M7,20H4v-8h3V20z M19.98,13.17l-1.34,6 C18.54,19.65,18.03,20,17.43,20H8v-8.61l5.6-6.06C13.79,5.12,14.08,5,14.38,5c0.26,0,0.5,0.11,0.63,0.3 c0.07,0.1,0.15,0.26,0.09,0.47l-1.52,4.94L13.18,12h1.35h4.23c0.41,0,0.8,0.17,1.03,0.46C19.92,12.61,20.05,12.86,19.98,13.17z">
+                                </path>
+                            </svg><span class="pt-1 ps-2">Liked</span></a>
+                        <br>
+                        <a href="#" class="d-flex"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                focusable="false" style="pointer-events: none; display: inherit;">
+                                <path d="m18 9.28-6.35 6.35-6.37-6.35.72-.71 5.64 5.65 5.65-5.65z"></path>
+                            </svg><span class="ps-2 pt-1">show more</span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-10 main">
+                <div class="container">
+                    <div class="row main1">
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+
+<script src="assets/js/logic.js"></script>
+</html>
