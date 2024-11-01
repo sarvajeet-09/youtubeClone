@@ -48,6 +48,7 @@ let Showvideos = (data) => {
       // Attach click event listener to store specific video ID
       videoElement.querySelector(".video").addEventListener("click", function () {
         localStorage.setItem("vid", JSON.stringify(videoId));
+        localStorage.setItem("tittle",JSON.stringify(title))
         console.log("Stored video ID:", videoId);
         window.location.href = "video.html";
       });
