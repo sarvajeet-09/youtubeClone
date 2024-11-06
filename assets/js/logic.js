@@ -1,6 +1,8 @@
 // www.googleapis.com/youtube/v3/search?part=snippet&maxReults=50&q=Thor&key=AIzaSyDVwM4oRIW2Rc79x6FLBNbE8pIAhnNKHIE
 
-var videoContainer = document.querySelector(".main1");
+let videoContainer = document.querySelector(".main1");
+let watchHistory = JSON.parse(localStorage.getItem('watchHistory')) || [];
+
 let searchdata = async (searchValue) => {
   let response = await fetch(
     ` https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=${searchValue}&key=AIzaSyDVwM4oRIW2Rc79x6FLBNbE8pIAhnNKHIE`
@@ -26,7 +28,6 @@ let Showvideos = (data) => {
       videoElement.classList.add("col-lg-4");
       videoElement.innerHTML = `
         <div class="videoContainer my-5">
-       
           <a class="video">
             <img src="${high.url}" class="thumbnail img-fluid rounded" alt="">
             <div class="content">
@@ -45,12 +46,22 @@ let Showvideos = (data) => {
           </a>
         </div>`;
 
+     
+
       // Attach click event listener to store specific video ID
       videoElement.querySelector(".video").addEventListener("click", function () {
         localStorage.setItem("vid", JSON.stringify(videoId));
-        localStorage.setItem("tittle",JSON.stringify(title))
+        localStorage.setItem("tittle", JSON.stringify(title))
         console.log("Stored video ID:", videoId);
         window.location.href = "video.html";
+        watchHistory.push({
+          videoId:videoId,
+          thumbnail: `${high.url}`,
+          title: `${title}`,
+          channelTitle: `${channelTitle}`,
+          watchedAt: new Date().toISOString(),
+        })
+        localStorage.setItem("watchHistory",JSON.stringify(watchHistory))
       });
 
       // Append the created element to the container
@@ -66,8 +77,8 @@ let initializeSearch = async () => {
   let data = await searchdata(searchvalue);
   Showvideos(data);
 };
-document
-  .querySelector("#searchbtn")
-  .addEventListener("click", initializeSearch);
+document.querySelector("#searchbtn").addEventListener("click", initializeSearch);
+// document.querySelector("#searchbtn").addEventListener("keypress", initializeSearch);
 
 // ---------------------------------------------------------------------------------------------------------------------------
+// history---------
